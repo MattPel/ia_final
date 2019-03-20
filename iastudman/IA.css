@@ -1,0 +1,261 @@
+body{
+	background-color: #dfe3e6;
+	color: #1e058b;
+	font-family: Calibri;
+	cursor: default;
+}
+
+#mytitle{
+	text-align: center;
+	color: #1e058b;
+	font-weight: bold;
+}
+
+.mybase{
+	color: #0d3800;
+	font-weight: bold;
+	font-size: 165%;
+	text-align: center;
+}
+
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Styling the popup itself */
+.popup .popuptext {
+  visibility: hidden;
+  width: 320px;
+  background-color: #b4bdc4;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 25%;
+  margin-left: -80px;
+}
+
+/* Styling the arrow below the popup */
+.popup .popuptext:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* When clicking on the popup, this class is toggled */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* The popup's fading animation */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+
+
+div#saving {
+	position: fixed;
+	top: 5px;
+	right: 5px;
+	color: black;
+	text-shadow: 1px 1px 1px #fffffff;
+	opacity: 0.7;
+}
+
+#mySlidebar:hover{
+	color: #28ad00;
+}
+
+.sidenav {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #000059;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.55s;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #b4bdc4;
+    display: block;
+    transition: 0.28s;
+}
+
+.sidenav a:hover {
+    color: #28ad00;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 40px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+.descInput{
+	font-size: 125%;
+	font-weight: bold;
+	margin-left: 2%;
+}
+
+.btn {
+	border-radius: 20px;
+	color: white;
+	background-color: #1e058b;
+}
+
+#button:hover{
+	background-color: green;
+}
+
+.btn:disabled{
+	background-color: grey !important;
+}
+
+#sortAlphabeticallyButton{
+	border-radius: 20px;
+	font-size: 110%;
+	color: white;
+	background-color: #0d3800;	
+}
+
+#sortAlphabeticallyButton:hover{
+	background-color: #1e058b;
+}
+
+#myLogin:hover {
+	background-color: darkgreen;
+}
+
+#myCancel:hover {
+	background-color: darkred;
+}
+
+#submit:hover {
+	background-color: darkgreen;
+}
+
+#reset:hover {
+	background-color: darkred;
+}
+
+.form-control {
+	border-radius: 20px;
+}
+
+input:focus, select:focus {
+	border-color: green !important;
+}
+
+.error:focus {
+	border-color: red !important;
+}
+
+.table {
+	border-collapse: collapse;
+	width: 100%;
+	background-color: white;
+}
+
+.img-fluid{
+	max-width: 100%;
+	height: auto;
+	border-radius: 20%;
+}
+
+.table tr:hover {background-color: #ddd;}
+
+.table th{
+	color: #1e058b;
+	font-size: 140%;	
+	background-color: #cba;
+	font-weight: bold;
+}
+
+.table td {
+	padding: 8px;
+	font-size: 125%;
+	width: 0%;
+	text-align: center;
+	color: #0d3800;
+	font-size: 110%;
+	line-height: 90%;
+}
+
+.table td, .table th, .table tr{
+	border: 1px solid black;
+	padding: 8px;
+	border-collapse: collapse;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.notes{
+	max-width: 500px;
+	width: 500px;
+}
+
+.grades{
+	max-width: 150px;
+	width: 150px;
+}
+
+div.scrollable_notes {
+	width: 100%;
+    max-height: 200px;
+	height: 200px;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+	height: 80px;
+	text-align: left;
+}
+
+div.scrollable_grades {
+	width: 100%;
+    max-height: 75%;
+	height: 50%;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+	text-align: center;
+}
+
+.addButton:hover {
+	background-color:darkgreen;
+}
+
+.removeButton:hover {
+	background-color:darkred;
+}
