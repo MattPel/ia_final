@@ -60,7 +60,6 @@
 					else{
 						$sql = $sql . " SchoolSystem = '" . $schoolSystem . "'";
 					}
-					echo $sql;
 				}
 				
 				if(!empty($_POST['CourseLevel'])){	
