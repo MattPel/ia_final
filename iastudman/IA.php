@@ -153,7 +153,7 @@
 							</div>
 							
 							<input name="identifier" value="searchForm" style="display:none"> <!-- Used so that getstudents.php understands which form has been submitted -->
-							<input id="submit" type="submit" name="search" value="Search" class="btn btn-primary mb-2" onclick="showResults(); if (checkAllEmpty()){return true;} else return false;">
+							<input id="submit" type="submit" name="search" value="Search" class="btn btn-primary mb-2" onclick="showResults();">
 							<button type="reset" id="reset" class="btn btn-primary mb-2" onclick="enableSearch(); hideHint('error-message-nameID'); hideHint('error-message-yearID'); makeAroundGreen();
 								closeDropdown('hiddenOptionSearch'); hideResults(); closeSort();"> Reset </button>	
 					</div>			

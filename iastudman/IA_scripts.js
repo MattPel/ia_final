@@ -165,7 +165,7 @@ $(function() {
 			$('#results').html(response);
 			
 			//determine when the "Sort Alphabetically" button will be visible	
-			if (response.indexOf('Sorry, no matches found!') < 0) {
+			if ((response.indexOf('Sorry, no matches found!') < 0) && (response.indexOf('Please complete at least one field!') < 0) && (response.indexOf('Connection failed') < 0) && (response.indexOf('There was a problem with your submission') < 0)) {
 				$('#sortAlphabeticallyButton').attr('style', 'display:block;');
 			}
 			else {
@@ -369,29 +369,27 @@ $(function() {
 	$(form).on("submit",function(event) {
 		event.preventDefault();
 
-		if (checkAnyEmpty()){
-			//serialize the form data
-			var formData = $(form).serialize();
+		//serialize the form data
+		var formData = $(form).serialize();
+		
+		//submit the form via AJAX
+		$.ajax({
+			type: 'POST',
+			url: $(form).attr('action'),
+			data: formData
+		}).done(function(response) {
+
+			//set the message texts
 			
-			//submit the form via AJAX
-			$.ajax({
-				type: 'POST',
-				url: $(form).attr('action'),
-				data: formData
-			}).done(function(response) {
+			$('#addRemoveArea').html(response);
+			$('#addRemoveArea').attr('style', 'display:block;');
+			
+		}).fail(function(response) {
 
-				//set the message texts
-				
-				$('#addRemoveArea').html(response);
-				$('#addRemoveArea').attr('style', 'display:block;');
-				
-			}).fail(function(response) {
-
-				$('#addRemoveArea').html(response);
-				$('#addRemoveArea').attr('style', 'display:block;');
-				
-			});
-		}
+			$('#addRemoveArea').html(response);
+			$('#addRemoveArea').attr('style', 'display:block;');
+			
+		});
 	});
 });
 
@@ -473,32 +471,28 @@ $(function() {
 		//stop the browser from submitting the form
 		event.preventDefault();
 
-		if ($('#removeName').val()!=""){
-			//serialize the form data
-			var formData = $(form).serialize();
+		
+		//serialize the form data
+		var formData = $(form).serialize();
+		
+		//submit the form via AJAX
+		$.ajax({
+			type: 'POST',
+			url: $(form).attr('action'),
+			data: formData
+		}).done(function(response) {
+
+			//set the message texts
 			
-			//submit the form via AJAX
-			$.ajax({
-				type: 'POST',
-				url: $(form).attr('action'),
-				data: formData
-			}).done(function(response) {
+			$('#addRemoveArea').html(response);
+			$('#addRemoveArea').attr('style', 'display:block;');
+			
+		}).fail(function(response) {
 
-				//set the message texts
-				
-				$('#addRemoveArea').html(response);
-				$('#addRemoveArea').attr('style', 'display:block;');
-				
-			}).fail(function(response) {
-
-				$('#addRemoveArea').html(response);
-				$('#addRemoveArea').attr('style', 'display:block;');
-				
-			});
-		}
-		else {
-			alert("Please insert the name of the student to remove!");
-		}
+			$('#addRemoveArea').html(response);
+			$('#addRemoveArea').attr('style', 'display:block;');
+			
+		});
 	});
 });
 
